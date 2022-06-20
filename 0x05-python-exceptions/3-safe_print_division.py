@@ -2,7 +2,8 @@
 def safe_print_division(a, b):
     res = None
     try:
-        return (res := a / b)
+        res = a / b
+        return (res)
     except ZeroDivisionError:
         return (res)
     finally:
