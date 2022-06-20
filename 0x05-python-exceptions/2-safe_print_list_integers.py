@@ -12,7 +12,7 @@ def safe_print_list_integers(my_list=[], x=0):
     except IndexError:
         for i in my_list:
             if (isinstance(i, int)):
-                print(i, end="")
+                print("{:d}".format(i), end="")
                 y += 1
         print()
         return (y)
