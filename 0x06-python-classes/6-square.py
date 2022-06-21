@@ -57,7 +57,7 @@ class Square:
         """
         Prints the square using # at the given position
         """
-        if (self.__size == 0):
+        if self.__size == 0:
             print()
             return
         '#print self.__position number of new lines'
