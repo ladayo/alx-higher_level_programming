@@ -60,7 +60,7 @@ class Square:
         if self.__size == 0:
             print()
             return
-        '#print self.__position number of new lines'
+        # print self.__position number of new lines
         for i in range(self.__position[1]):
             print()
         for i in range(self.__size):
