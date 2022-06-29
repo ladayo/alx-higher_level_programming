@@ -1,0 +1,47 @@
+The ``add`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is to add two integers.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Now use it:
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2) #doctest: +REPORT_NDIFF
+100
+
+>>> add_integer(100.3, -2) #doctest: +REPORT_NDIFF
+98
+
+>>> add_integer("I", "am")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(4, "school")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'), 1)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(23, 45, 87, 89) #doctest: +REPORT_NDIFF
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
