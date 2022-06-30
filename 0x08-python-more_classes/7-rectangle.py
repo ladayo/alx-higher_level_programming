@@ -34,7 +34,7 @@ class Rectangle:
         length = []
         for i in range(self.__height):
             for j in range(self.__width):
-                length.append('#')
+                length.append(str(self.print_symbol))
             if i + 1 != self.__height:
                 length.append('\n')
         return ''.join(length)
