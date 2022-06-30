@@ -24,6 +24,35 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
+    def __str__(self):
+        """
+        returns string representation of the rectangle
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        length = []
+        for i in range(self.__height):
+            for j in range(self.__width):
+                length.append('#')
+            if i + 1 != self.__height:
+                length.append('\n')
+        return ''.join(length)
+
+    def __repr__(self):
+        """
+        returns string representation that can be evaluated
+        with the eval function
+        """
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """
+        called when an instance is to be deleted
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
+
     @property
     def width(self):
         """
@@ -58,32 +87,3 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * (self.__width + self.__height))
-
-    def __str__(self):
-        """
-        returns string representation of the rectangle
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-
-        length = []
-        for i in range(self.__height):
-            for j in range(self.__width):
-                length.append('#')
-            if i + 1 != self.__height:
-                length.append('\n')
-        return ''.join(length)
-
-    def __repr__(self):
-        """
-        returns string representation that can be evaluated
-        with the eval function
-        """
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-
-    def __del__(self):
-        """
-        called when an instance is to be deleted
-        """
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
