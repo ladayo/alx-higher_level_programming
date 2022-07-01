@@ -2,6 +2,8 @@
 """
 Module to print square
 """
+
+
 def print_square(size):
     """
     function that prints a square with the character #
@@ -19,5 +21,5 @@ def print_square(size):
         raise TypeError("size must be an integer")
     for i in range(size):
         for j in range(size):
-            print("#",end="")
+            print("#", end="")
         print()
